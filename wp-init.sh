@@ -6,11 +6,7 @@ WORDPRESS_PASSWORD=$(sed -e 's#.*=\(\)#\1#' <<< "$(awk '/WORDPRESS_ADMIN_PASSWOR
 WORDPRESS_PLUGINS_TO_INSTALL=$(sed -e 's#.*=\(\)#\1#' <<< "$(awk '/WORDPRESS_PLUGINS_TO_INSTALL/{print}' .env)" | xargs)
 WORDPRESS_THEME_TO_INSTALL=$(sed -e 's#.*=\(\)#\1#' <<< "$(awk '/WORDPRESS_THEME_TO_INSTALL/{print}' .env)" | xargs)
 
-
-echo "Hello"
-echo $SERVER_NAME
-echo $WORDPRESS_TITLE
-
+echo "== Installing WordPress =="
 ## Install Wodpress
 docker compose run wpcli core install \
 	--url=${SERVER_NAME} \
@@ -20,9 +16,11 @@ docker compose run wpcli core install \
 	--admin_password=${WORDPRESS_PASSWORD} \
 	--skip-email
 
+echo "== Configure Permalinks =="
 ## Configure Permalinks
 docker compose run wpcli rewrite structure '/%postname%/'
 
+echo "== Install Plugins =="
 ## Install Plugins
 docker compose run wpcli plugin install ${WORDPRESS_PLUGINS_TO_INSTALL} --activate
 
@@ -52,6 +50,7 @@ docker compose run wpcli option update cache_enabler '{
     "excluded_cookies": ""
 }' --format=json
 
+echo "== Installing themes =="
 # Theme installation
 docker compose run wpcli theme install "${WORDPRESS_THEME_TO_INSTALL}" --activate
 
