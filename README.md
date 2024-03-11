@@ -37,18 +37,16 @@ To get your WordPress installation running follow these simple steps.
    ```sh
    sh wp-install.sh
    ```
+### Init Wordpress Installation
 
+1. Run shell command
+   ```sh
+   sh wp-init.sh
+   ```
 
 ### Uninstall
 
 1. Run shell command
    ```sh
    sh wp-uninstall.sh
-   ```
-
-### Init Wordpress Installation
-
-1. Run shell command
-   ```sh
-   sh wp-init.sh
    ```
