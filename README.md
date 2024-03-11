@@ -15,11 +15,11 @@ To get your WordPress installation running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/cosimoscarcella/wordpress-installer.git
+   git clone https://github.com/10h30/wordpress-caddy-docker.git
    ```
 2. Go into the created folder
    ```sh
-   cd ./wordpress-installer
+   cd ./wordpress-caddy-docker
    find . -type f -iname "*.sh" -exec chmod +x {} \;
    ```
 
