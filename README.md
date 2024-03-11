@@ -35,18 +35,18 @@ To get your WordPress installation running follow these simple steps.
 1. Modify passwords and variables inside ```.env``` file as you wish
 2. Run shell command
    ```sh
-   sh wp-install.sh
+   ./wp-install.sh
    ```
 ### Init Wordpress Installation
 
 1. Run shell command
    ```sh
-   sh wp-init.sh
+   ./wp-init.sh
    ```
 
 ### Uninstall
 
 1. Run shell command
    ```sh
-   sh wp-uninstall.sh
+   ./wp-uninstall.sh
    ```
