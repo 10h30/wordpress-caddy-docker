@@ -20,7 +20,7 @@ services:
     restart: always
     depends_on:
       - db
-      - redis
+      #- redis
     volumes:
       - ./wordpress/html:/var/www/html
       - ./wordpress/custom.ini:/usr/local/etc/php/conf.d/custom.ini
@@ -44,9 +44,9 @@ services:
     volumes:
       - ./wordpress/html:/var/www/html
 
-  redis:
-    image: redis:6.2.14
-    restart: always
+  #redis:
+  #  image: redis:6.2.14
+  #  restart: always
 
   #elastic:
   #  image: elasticsearch:7.17.13

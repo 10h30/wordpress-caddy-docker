@@ -25,7 +25,7 @@ echo "== Install Plugins =="
 docker compose run wpcli plugin install ${WORDPRESS_PLUGINS_TO_INSTALL} --activate
 
 ## Enable Redis Cache Object
-docker compose run wpcli redis enable
+#docker compose run wpcli redis enable
 
 ## Enable and config Cache Enabler
 docker compose run wpcli option update cache_enabler '{
