@@ -44,6 +44,15 @@ services:
     volumes:
       - ./wordpress/html:/var/www/html
 
+  #phpmyadmin:
+  #  image: bitnami/phpmyadmin:5.2.0-debian-11-r43
+  #  ports:
+  #    - 8080:8080
+  #    - 8443:8443
+  #  environment:
+  #      DATABASE_HOST: db
+  #  restart: always
+
   #redis:
   #  image: redis:6.2.14
   #  restart: always
