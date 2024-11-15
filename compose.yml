@@ -1,7 +1,6 @@
-version: "3.9"
 services:
   caddy:
-    image: caddy:2.7.6-alpine
+    image: caddy:2.8.4-alpine
     container_name: caddy
     env_file: .env
     ports:
@@ -20,7 +19,6 @@ services:
     restart: always
     depends_on:
       - db
-      #- redis
     volumes:
       - ./wordpress/html:/var/www/html
       - ./wordpress/custom.ini:/usr/local/etc/php/conf.d/custom.ini
